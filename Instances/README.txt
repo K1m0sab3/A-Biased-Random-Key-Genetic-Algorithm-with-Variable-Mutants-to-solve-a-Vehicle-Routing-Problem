@@ -20,21 +20,20 @@ Each instance is a .dat file formatted as follows:
         dist(Cn-1, Cn) ||| dist(Cn-1, OD1) ... dist(Cn-1, ODm) dist(Cn-1, Depot)
         ||| dist(Cn, OD1) ... dist(Cn, ODm) dist(Cn, Depot)
 
-Note: The entire matrix is not actually a TRIU. To identify the TRIU structure, you should focus only on the left section
- of the matrix, marked by the three vertical bars |||.
+Note: The entire matrix is not actually a TRIU. To identify the TRIU structure, you should focus only on the left section of the matrix, marked by the three vertical bars |||.
 
 This TRIU section represents the distances between customers, while the rest of the matrix contains distances:
 - Between customers and ODs
 - Between customers and the depot.
 
-3. A (s+t)X2 matrix of TWs for the n customers and the m occasional drivers
+3. A (n+m)X2 matrix of time windows for the n customers and the m occasional drivers
 
-        lC1 uC1 (lower-time-customer-1 upper-time-customer-1)
+        lC1 uC1 (lower-time windows-customer-1 upper-time windows-customer-1)
         ... ...     ...
-        lCn  uCn (lower-time-customer-n upper-time-customer-n)
-        lOD1 uOD1 (lower-time-occasional-driver-1 upper-time-occasional-driver-1)
+        lCn  uCn (lower-time windows-customer-n upper-time windows-customer-n)
+        lOD1 uOD1 (lower-time windows-occasional-driver-1 upper-time windows-occasional-driver-1)
         ...  ...    ...
-        lODm uODm (lower-time-occasional-driver-m upper-time-occasional-driver-m)
+        lODm uODm (lower-time windows-occasional-driver-m upper-time windows-occasional-driver-m)
 
 4. Distances from the depot
 
